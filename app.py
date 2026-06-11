@@ -586,7 +586,7 @@ if submit:
         st.stop()
 
     api_key = os.getenv("GROQ_API_KEY", "").strip()
-    if not api_key:
+    if not api_key or len(api_key) <= 1:
         st.error("🔑 GROQ_API_KEY missing — add it to your .env file.")
         st.stop()
 
